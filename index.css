@@ -1,0 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    /*width: 10px;*/
+    /*height: 10px;*/
+    border: 10px solid red;
+}
+
+/*# sourceMappingURL=main.css.map */

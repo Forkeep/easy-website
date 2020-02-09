@@ -1,0 +1,308 @@
+$background-color: #f4f4f4
+$debug-border-style: 1px solid red
+$front-color: #ffffff
+$a-hover: #2fbbae
+$border-color: #e2e2e2
+$border-width: 1px
+$header-height: 68px
+$font-size-text: 8px
+$font-size-title: 30px
+$font-color-text: #646464
+$font-color-title: #3c3b3b
+$line-height: 14px
+$line-height-title: 30px
+
+
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  font-size: $font-size-text
+  color: $font-color-text
+
+a
+  text-decoration: none
+
+ul
+  list-style: none
+
+
+
+.clearfix::after
+  content: ''
+  clear: both
+  height: 0
+  display: block
+  visibility: hidden
+
+.wrapper
+  //border: $debug-border-style
+  background-color: $background-color
+
+  #header
+    position: fixed
+    border: $border-width solid $border-color
+    background-color: $front-color
+    height: $header-height
+    width: 100%
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5)
+    z-index: 2
+
+    h1
+      font-size: 50px
+      text-align: center
+      float: left
+      //display: inline-block
+      width: 278px
+      height: 100%
+      border-right: $border-width solid $border-color
+
+    .links
+      float: left
+
+      li
+        font-size: $font-size-text
+        float: left
+        margin-top: 27px
+        padding: 0 30px
+        border-right: $border-width solid $border-color
+
+        a:hover
+          color: $a-hover
+
+    .menu
+      ul
+        //display: block
+        margin-right: 20px
+
+        li
+          display: block
+          float: right
+          height: 100%
+          padding-top: 27px
+          padding-left: 30px
+          padding-right: 30px
+          padding-bottom: 16px
+          border-left: $border-width solid $border-color
+
+        :nth-child(1)
+          padding-right: 10px
+
+
+  #page
+    padding: 0 40px 0 0
+
+    #aside
+      margin-top: $header-height + 45px
+      float: left
+      width: 32%
+      padding: 0 50px
+
+      .profile-photo
+        position: relative
+        height: 60px
+        width: 30px
+        transform: rotate(90deg)
+        background-color: rgba(0, 0, 0, 0.1)
+
+
+      .profile-photo::before
+        content: ''
+        border-left: 15px solid transparent
+        border-right: 15px solid rgba(0, 0, 0, 0.1)
+        border-top: 30px solid transparent
+        border-bottom: 30px solid transparent
+        position: absolute
+        right: 29px
+
+      .profile-photo::after
+        content: ''
+        border-left: 15px solid rgba(0, 0, 0, 0.1)
+        border-right: 15px solid transparent
+        border-top: 30px solid transparent
+        border-bottom: 30px solid transparent
+        position: absolute
+        left: 29px
+
+      h1
+        margin-top: 10px
+        font-size: $font-size-title
+        font-weight: bold
+
+
+      .photo-wrapper
+        .one-photo
+          margin: 25px 0
+          border: $border-width solid $border-color
+          position: relative
+          width: 100%
+          height: 230px
+
+          .photo
+            width: 100%
+            height: 160px
+            background-image: url("/img/pic03.jpg")
+            background-size: cover
+            z-index: 1
+          .info
+            background-color: white
+            position: relative
+            height: 230px - 160px
+            .small-photo
+              float: right
+            p
+              position: absolute
+              bottom: 10px
+              left: 10px
+            h3
+              position: absolute
+              bottom: 3 * $font-size-text + 10px
+              left: 10px
+            .small-photo
+              background-image: url("/img/touxiang.jpeg")
+              background-size: cover
+              height: 50px
+              width: 50px
+              border-radius: 100%
+              position: absolute
+              margin: auto 0
+              right: 10px
+              top: 0
+              bottom: 0
+      .comment-wrapper
+        margin: 30px 0
+        .comment
+          height: 80px
+          width: 100%
+          margin: 40px 0
+          .people-comment
+            background-image: url("/img/people.jpeg")
+            background-size: cover
+            float: left
+            width: 80px
+            height: 80px
+          .comment-content
+            width: 70%
+            height: 100%
+            float: left
+            h3
+              margin: 10px 10px
+              font-size: 20px
+            p
+              margin: 10px 10px
+      .about-wrapper
+        .about
+          margin: 20px 0
+          font-size: 16px
+        .learn-more
+          margin-top: 30px
+          display: block
+          width: 170px
+          height: 55px
+          background-color: white
+        .learn-more:hover
+          border: 1px  solid $a-hover
+      .contact-wrapper
+        margin-top: 30px
+        margin-bottom: 50px
+        li
+          float: left
+          margin: 0 10px
+          .icon:hover
+            background-color: $a-hover
+
+
+    #main
+      margin-top: $header-height + 45px
+      background-color: $background-color
+      float: left
+      width: 68%
+      .article
+        border: $border-width solid $border-color
+        box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3)
+        background-color: white
+        width: 100%
+        height: 750px
+        margin-bottom: 50px
+        .article-title-info-warpper
+          height: 200px
+          .title
+            float: left
+            border-bottom: 1px solid $border-color
+            height: 100%
+            width: 70%
+            a
+              p
+                margin-left: 40px
+                font-size: 40px
+                margin-top: 40px
+            p
+              font-size: 15px
+              margin-top: 20px
+              margin-left: 40px
+          .info
+            border-bottom: 1px solid $border-color
+            border-left: 1px solid $border-color
+            position: relative
+            float: left
+            height: 100%
+            width: 30%
+            h3
+              position: absolute
+              top: 50px
+              left: 50px
+              font-size: 18px
+              font-weight: bolder
+            p
+              position: absolute
+              font-size: 12px
+              top: 100px
+              left: 80px
+            .small-photo
+              background-image: url("/img/people.jpeg")
+              background-size: cover
+              position: absolute
+              height: 50px
+              width: 50px
+              border-radius: 100%
+              left: 167px
+              top: 80px
+
+        .main
+          border-bottom: 1px solid $border-color
+          height: 450px
+          .img
+            background-image: url("/img/article.jpg")
+            background-size: cover
+            width: 80%
+            margin: 30px auto
+            height: 300px
+
+          p
+            margin: 5px 20px
+        .footer
+          position: relative
+          height: 100px
+          .read
+            display: block
+            width: 130px
+            height: 40px
+            margin-top: 15px
+            margin-left: 40px
+          .read:hover
+            border: $border-width solid $a-hover
+          li:nth-child(2)
+            position: absolute
+            right: 20px
+            top: 5px
+          li:nth-child(1)
+            position: absolute
+            right: 100px
+            top: 5px
+
+
+
+
+
+
+
