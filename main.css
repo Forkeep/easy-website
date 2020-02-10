@@ -14,6 +14,23 @@ ul {
   list-style: none;
 }
 
+@keyframes niudong {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(25deg);
+  }
+  50% {
+    transform: rotate(-25deg);
+  }
+  75% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}
 .clearfix::after {
   content: "";
   clear: both;
@@ -116,6 +133,7 @@ ul {
   position: relative;
   width: 100%;
   height: 230px;
+  overflow: hidden;
 }
 .wrapper #page #aside .photo-wrapper .one-photo .photo {
   width: 100%;
@@ -123,6 +141,10 @@ ul {
   background-image: url("img/pic03.jpg");
   background-size: cover;
   z-index: 1;
+  transition-duration: 1s;
+}
+.wrapper #page #aside .photo-wrapper .one-photo .photo:hover {
+  transform: scale(1.3);
 }
 .wrapper #page #aside .photo-wrapper .one-photo .info {
   background-color: white;
@@ -153,6 +175,13 @@ ul {
   right: 10px;
   top: 0;
   bottom: 0;
+}
+.wrapper #page #aside .photo-wrapper .one-photo .info .small-photo:hover {
+  animation-name: niudong;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-direction: normal;
 }
 .wrapper #page #aside .comment-wrapper {
   margin: 30px 0;
@@ -204,6 +233,7 @@ ul {
   margin: 0 10px;
 }
 .wrapper #page #aside .contact-wrapper li .icon:hover {
+  font-size: 15px;
   background-color: #2fbbae;
 }
 .wrapper #page #main {
@@ -274,12 +304,22 @@ ul {
   border-bottom: 1px solid #e2e2e2;
   height: 450px;
 }
-.wrapper #page #main .article .main .img {
+.wrapper #page #main .article .main div {
+  width: 80%;
+  height: 300px;
+  margin: 30px auto;
+  overflow: hidden;
+}
+.wrapper #page #main .article .main div .img {
   background-image: url("img/article.jpg");
   background-size: cover;
-  width: 80%;
-  margin: 30px auto;
-  height: 300px;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+.wrapper #page #main .article .main div .img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 .wrapper #page #main .article .main p {
   margin: 5px 20px;
@@ -307,6 +347,21 @@ ul {
   position: absolute;
   right: 100px;
   top: 5px;
+}
+.wrapper #menu {
+  position: fixed;
+  background-color: #f4f4f4;
+  border: 1px solid red;
+  height: 90vh;
+  width: 300px;
+  top: 70px;
+  right: 0;
+  z-index: 10;
+  display: none;
+  transition-duration: 3s;
+}
+.wrapper #menu.active {
+  display: block;
 }
 
 /*# sourceMappingURL=main.css.map */
